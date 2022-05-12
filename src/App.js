@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import Ships from './components/Ships';
+import Ships from './components/Ships/Ships';
 
 function App() {
   const [ship, setShip] = useState([]);

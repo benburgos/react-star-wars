@@ -1,5 +1,5 @@
 import React from 'react';
-import Ship from './Ship';
+import Ship from '../Ship/Ship';
 
 export default function Ships({ results }) {
   const shipArray = results.map((ship, index) => {
