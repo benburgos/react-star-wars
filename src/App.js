@@ -1,8 +1,10 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import Ships from './components/Ships';
 
 function App() {
   const [ship, setShip] = useState([]);
+
   useEffect(() => {
     const getShips = async () => {
       const response = await fetch('https://swapi.dev/api/starships/');
@@ -11,6 +13,7 @@ function App() {
     };
     getShips();
   }, []);
+
   let { results } = ship;
 
   if (results) {
@@ -18,16 +21,7 @@ function App() {
       <div className="App">
         <h1>Star Wars Starships</h1>
         <div className="card-container">
-          {results.map((e, i) => {
-            return (
-                <div className="card" key={i}>
-                  <h2>{e.name}</h2>
-                  <p>Model: {e.model}</p>
-                  <p>Manufacturer: {e.manufacturer}</p>
-                  <p>Cost: {e.cost_in_credits} Credits</p>
-                </div>
-            );
-          })}
+          <Ships {...ship} />
         </div>
       </div>
     );
@@ -35,7 +29,7 @@ function App() {
     return (
       <div className="App">
         <h1>Star Wars Starships</h1>
-        <h2 className='loading-message'>Loading Starships...</h2>
+        <h2 className="loading-message">Loading Starships...</h2>
       </div>
     );
   }

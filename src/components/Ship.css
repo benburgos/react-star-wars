@@ -1,0 +1,15 @@
+.card {
+    background-color: #52796f;
+    width: 25%;
+    border-radius: 5px;
+    margin: 2px;
+  }
+  .card h2 {
+    color: #354f52;
+    text-align: center;
+  }
+  .card p {
+    color: #fff8f0;
+    margin: 5%;
+  }
+  
